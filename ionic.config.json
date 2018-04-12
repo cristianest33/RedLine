@@ -1,0 +1,8 @@
+{
+  "name": "ultima",
+  "app_id": "a13fb7d3",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
