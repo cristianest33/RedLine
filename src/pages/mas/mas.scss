@@ -1,0 +1,73 @@
+page-mas {
+  .logo {
+    max-width: 50%;
+    display: block;
+    margin: auto;
+    margin-top: 4px;
+  }
+
+  .empresa {
+    height: 50%;
+  }
+
+  .home {
+    background-color: seashell !important; /* This sets the background color*/
+   }
+
+  /*Set the background to transparent for ion-item*/
+  .home ion-card {
+    background-color: transparent;
+    color:black;    /*Text color for each item*/
+    border-bottom: 0px;
+    margin: 0px;
+    width: 100%;
+    margin-top: 23px;
+  }
+
+  .home ion-card img {
+      width: 80%;
+  }
+
+  .home .item-block {
+    padding: 10px;
+  }
+
+  .boton-izq {
+    margin-left: 20px;
+    background-color: #D9534F;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+  }
+
+  .boton-izq .fa {
+    font-size: 3.4rem;
+    color: white;
+  }
+
+  .card-md p {
+    text-align: center;
+  }
+
+  ion-card {
+    position: relative;
+    text-align: center;
+  }
+
+  .card-title {
+    position: absolute;
+    top: 36%;
+    font-size: 2.0em;
+    width: 100%;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  .card-subtitle {
+    font-size: 1.0em;
+    position: absolute;
+    top: 62%;
+    width: 100%;
+    color: #fff;
+  }
+}

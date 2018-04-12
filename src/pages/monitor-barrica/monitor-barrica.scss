@@ -1,0 +1,44 @@
+page-monitor-barrica {
+  .toolbar-title-md {
+    font-size: 15px;
+    color: #ff8c69 !important;
+    text-align: center;
+  }
+
+  .img-navbar {
+    width: 20%;
+    display:block;
+    margin:auto;
+  }
+
+  .bar-buttons-md {
+    order: 1;
+  }
+
+  .detalle p {
+    color: #C0451E;
+  }
+
+  .card-monitor img {
+      width: 45%;
+      margin-left: 11px;
+  }
+
+  .card-detalle {
+    font-size: 1.0em;
+    position: absolute;
+    left: 55%;
+    top: 7%;
+    width: 100%;
+  }
+
+  .card-porcentaje {
+    font-size: 2.0em;
+    position: absolute;
+    left: 22%;
+    top: 23%;
+    width: 100%;
+    color: oldlace;
+  }
+
+}

@@ -1,0 +1,26 @@
+<ion-slides slides padding>
+  <ion-slide *ngFor="let slide of slides">
+
+      <ion-buttons end>
+        <button ion-button clear (click)="skip()" class="botton-color">Salir</button>
+      </ion-buttons>
+
+    <img [src]="slide.image" class="slide-image" />
+    <h2 class="slide-title" [innerHTML]="slide.title"></h2>
+    <p [innerHTML]="slide.description" class="page-color"></p>
+  </ion-slide>
+  <ion-slide>
+    <img src="assets/images/logo-softdelsur.png" class="img-soft" />
+    <h2 class="slide-title2">¿Listo para continuar?</h2>
+    <button ion-button
+            large
+            clear
+            icon-end
+            color="primary" 
+            (click)="skip()"
+            class="botton-color">
+      Continuar
+      <ion-icon name="arrow-forward"></ion-icon>
+    </button>
+  </ion-slide>
+</ion-slides>

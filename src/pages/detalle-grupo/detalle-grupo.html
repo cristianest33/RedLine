@@ -1,0 +1,100 @@
+<ion-header>
+  <ion-toolbar color=redline>
+    <ion-buttons start>
+      <button (click)="volver()" ion-button icon-only>
+          <ion-icon ios="ios-undo" md="md-undo"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>GRUPO: {{ grupo.descripcionGrupoBarrica }}</ion-title>
+    <img class="img-navbar" src="assets/images/enologia.png">
+    <ion-buttons end>
+      <button ion-button icon-only menuToggle>
+          <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <button (click)="agregarBarrica()"
+              ion-button
+              class = "boton_arriba">
+              <i class="fa fa-plus" aria-hidden="true"></i>
+              Agregar Barrica
+  </button>
+
+  <ion-card *ngFor="let barrica of _grupoBarricasProvider.barricas; let i = index">
+    <ion-grid class="detalle">
+      <ion-row>
+        <ion-col col-4 >
+          <p>Código:</p>
+          {{ barrica.codigoBarrica }}
+          <p>Capacidad:</p>
+          {{ barrica.capacidad }}
+        </ion-col>
+        <ion-col col-4>
+          <p>Año Adquisición:</p>
+          {{ barrica.anioAdquisicion }}
+          <p>Origen:</p>
+          {{barrica.origen}}
+        </ion-col>
+        <ion-col col-4>
+          <button *ngIf="ver != i" ion-button outline item-rigth
+            (click) = "ver_barrica( i );"
+              color = "redline">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </button>
+          <button *ngIf="ver == i" ion-button outline item-rigth
+            (click) = "ocultar_barrica();"
+              color = "redline">
+            <i class="fa fa-sort-asc" aria-hidden="true"></i>
+          </button>
+          <button ion-button outline item-rigth color="danger"
+            (click) = "sacar_barrica( barrica );">
+            <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-card *ngIf="ver == i">
+      <ion-grid class="detalle">
+        <ion-row>
+          <ion-col col-6>
+            <p>Número de Inventario</p>
+            {{ barrica.numeroInventario }}
+          </ion-col>
+          <ion-col col-6>
+            <p>Tipo Enología</p>
+            {{ barrica.tipoEnologia }}
+          </ion-col>
+
+        </ion-row>
+        <ion-row>
+          <ion-col col-12>
+            <p>Descripción:</p>
+            {{ barrica.descripcion }}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-4>
+            <p>Bosque:</p>
+            {{ barrica.bosque }}
+          </ion-col>
+          <ion-col col-4>
+            <p>Tonelería:</p>
+            {{ barrica.toneleria }}
+          </ion-col>
+          <ion-col col-4>
+            <p>Tostado:</p>
+            {{ barrica.tostado }}
+          </ion-col>
+        </ion-row>
+
+      </ion-grid>
+      <hr>
+    </ion-card>
+    <hr>
+  </ion-card>
+
+</ion-content>

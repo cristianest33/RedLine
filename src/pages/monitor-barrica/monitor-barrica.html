@@ -1,0 +1,75 @@
+
+<ion-header>
+  <ion-toolbar color=redline>
+    <ion-buttons start>
+      <button (click)="volver()" ion-button icon-only>
+          <ion-icon ios="ios-undo" md="md-undo"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>BARRICA: {{ movimiento.codigoVasija }} </ion-title>
+    <img class="img-navbar" src="assets/images/enologia.png">
+    <ion-buttons end>
+      <button ion-button icon-only menuToggle>
+          <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content >
+  <ion-card class="card-monitor">
+    <img src="assets/images/barrica.png" alt="">
+    <div class="card-porcentaje">
+      %{{ porcentaje }}
+    </div>
+    <div class="card-detalle">
+      <p>Color:</p>
+      {{ movimiento.color }}
+      <hr>
+      <p>Variedad:</p>
+      {{ movimiento.variedad }}
+      <hr>
+      <p>Capacidad: {{ movimiento.capacidad }}</p>
+      <p>Resto: {{ movimiento.restoVasija }}</p>
+    </div>
+    <ion-grid class="detalle">
+      <ion-row>
+        <ion-col col-4>
+          <p>Código:</p>
+          {{ movimiento.codigoArticulo }}
+        </ion-col>
+        <ion-col col-8>
+          <p>Artículo:</p>
+          {{ movimiento.descripcionArticulo }}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12>
+          <p>Cosecha:</p>
+          {{ movimiento.descripcionCosecha }}
+          <p>Deposito Asociado</p>
+          {{ movimiento.depositoAsociado }} - {{ movimiento.descripcionDepositoAsociado }}
+          <p>Lote:</p>
+          {{ movimiento.codigoLote }} - {{ movimiento.descripcionLote }}
+          <p>Tipo de corte:</p>
+          {{ movimiento.tipoCorte }}
+          <p>Corte:</p>
+          {{ movimiento.codigoCorte }} - {{ movimiento.descripcionCorte }}
+          <p>Grupo de Barrica:</p>
+          {{ movimiento.codigoGrupoBarrica }} - {{ movimiento.descripcionGrupoBarrica }}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-6>
+          <p>Calidad</p>
+          {{ movimiento.calidad }}
+        </ion-col>
+        <ion-col col-6>
+          <p>Fecha de llenado</p>
+          {{ movimiento.fechaLlenado }}
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar color=redline>
+    <ion-buttons start>
+      <button (click)="volver()" ion-button icon-only>
+          <ion-icon ios="ios-undo" md="md-undo"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>NUEVO GRUPO</ion-title>
+    <img class="img-navbar" src="assets/images/enologia.png">
+    <ion-buttons end>
+      <button ion-button icon-only menuToggle>
+          <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label>Deposito Asociado</ion-label>
+      <ion-select [(ngModel)]="depositoAsociado" [selectOptions]="depositoAsociadoAlertOpts">
+        <ion-option (ionSelect)="selDeposito(deposito.codigoDeposito)"
+                    *ngFor="let deposito of depositosAsociados"> {{ deposito.descripcion }} </ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Descripción Grupo</ion-label>
+      <ion-input type="text" [(ngModel)]="descripcion"></ion-input>
+    </ion-item>
+    <hr>
+    <div class="bar-stable">
+        <div class="row header">
+          <div class="col">Barricas</div>
+          <div class="col"></div>
+        </div>
+        <ion-card *ngFor="let barrica of barricas; let i = index">
+          <ion-grid class="detalle">
+            <ion-row>
+              <ion-col col-8>
+                <p>Barrica N°</p>
+                {{ barrica }}
+              </ion-col>
+              <ion-col col-4>
+                <button ion-button outline item-rigth color="danger"
+                  (click) = "sacar_barrica(i);">
+                  <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
+                </button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card>
+    </div>
+    <button (click)="agregarBarrica()"
+            ion-button icon-left>
+      <ion-icon ios="ios-add-circle" md="md-add-circle"></ion-icon>
+      Agregar Barrica
+    </button>
+  </ion-list>
+
+<button (click)="guardar_grupo()"
+        ion-button
+        icon-left
+        block
+        color="redline">
+  <ion-icon ios="ios-add-circle" md="md-add-circle"></ion-icon>
+  Guardar Grupo
+</button>
+
+</ion-content>

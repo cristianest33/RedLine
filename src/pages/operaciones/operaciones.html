@@ -1,0 +1,98 @@
+<ion-header>
+    <ion-toolbar color=redline>
+        <ion-buttons start>
+            <button (click)="volver()" ion-button icon-only>
+          <ion-icon ios="ios-undo" md="md-undo"></ion-icon>
+      </button>
+        </ion-buttons>
+        <ion-title>ORDEN DE TRABAJO N° {{ codigoOrden }}</ion-title>
+        <img class="img-navbar" src="assets/images/enologia.png">
+        <ion-buttons end>
+            <button ion-button icon-only menuToggle>
+          <ion-icon name="menu"></ion-icon>
+      </button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-list *ngFor="let tarea of _ordenesTrabajoProvider.tareas">
+        <ion-list-header color="dark">
+            Tarea: {{ tarea.destino.descripcionTarea }}
+        </ion-list-header>
+        <ion-card>
+            <ion-grid class="detalle">
+                <ion-list-header color="light">
+                    DESTINO
+                </ion-list-header>
+                <ion-item>
+                    {{ tarea.destino.descripcionDeposito }}
+                    <ion-note item-end>
+                        <button *ngIf="tarea.destino.tipoDeposito === 'BARRICA'" (click)="verGrupo(tarea.destino)" ion-button icon-only>
+                    <i class="fa fa-eye" aria-hidden="true"></i>
+            </button>
+                        <button *ngIf="tarea.destino.tipoDeposito === 'CUBAS' || tarea.destino.tipoDeposito === 'BARRICA'" (click)="confirmarDestino(tarea.destino)" ion-button icon-only>
+              <i *ngIf="!confirmaDestino" class="fa fa-qrcode" aria-hidden="true"></i>
+              <i *ngIf="confirmaDestino" class="fa fa-check" aria-hidden="true"></i>
+            </button>
+                    </ion-note>
+                </ion-item>
+                <ion-item>
+                    Artículo:
+                    <ion-note item-end>
+                        {{ tarea.destino.descripcionArticulo }}
+                    </ion-note>
+                </ion-item>
+                <ion-item>
+                    Litros a transferir:
+                    <ion-note item-end>
+                        {{ tarea.destino.cantidadArticulo | number:'.2-2' }} lts
+                    </ion-note>
+                </ion-item>
+            </ion-grid>
+        </ion-card>
+        <ion-card>
+            <ion-grid class="detalle">
+                <ion-list-header color="light">
+                    ORIGEN
+                </ion-list-header>
+                <div class="bar-stable">
+                    <div class="row header">
+                        <div class="col">Bodega</div>
+                        <div class="col">Item - Insumo</div>
+                        <div class="col">Cantidad</div>
+                        <div class="col">Cant. Conf.</div>
+                    </div>
+                    <div class="row" *ngFor="let origen of tarea.origen">
+                        <div class="col"> {{ origen.descripcionDeposito }}</div>
+                        <div class="col"> {{ origen.descripcionArticulo }} </div>
+                        <div class="col"> {{ origen.cantidadArticulo | number:'.2-2' }}</div>
+                        <div *ngIf="origen.tipoDeposito != 'CUBAS' && origen.tipoDeposito != 'BARRICA'" class="col">
+                            <ion-input [(ngModel)]="cantidadConfirmada" type="text" placeholder='{{ origen.cantidadArticulo }}'>
+                            </ion-input>
+
+                        </div>
+                        <div *ngIf="origen.tipoDeposito === 'CUBAS' || origen.tipoDeposito === 'BARRICA'" class="col">
+                            <button color="light" ion-button icon-only (click)="confirmarOrigen(origen)">
+                      <i *ngIf="!confirmaOrigen" class="fa fa-qrcode" aria-hidden="true"></i>
+                      <i *ngIf="confirmaOrigen" class="fa fa-check" aria-hidden="true"></i>
+                </button>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <ion-item>
+                    Total:
+                    <ion-note item-end>
+                        {{ tarea.destino.cantidadArticulo | number:'.2-2' }} lts
+                    </ion-note>
+                </ion-item>
+            </ion-grid>
+        </ion-card>
+        <button (click)="confirmar(tarea)" ion-button block>
+            Confirmar
+  </button>
+
+    </ion-list>
+</ion-content>

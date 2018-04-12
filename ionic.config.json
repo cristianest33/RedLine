@@ -1,6 +1,6 @@
 {
-  "name": "ultima",
-  "app_id": "a13fb7d3",
+  "name": "EnologiaMovil",
+  "app_id": "f8ab2d31",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}

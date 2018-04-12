@@ -1,0 +1,59 @@
+<!--
+  Generated template for the ModalSobrasPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!--
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+
+        </ion-title>
+
+    </ion-toolbar>
+</ion-header>
+-->
+<ion-content>
+    <ion-list>
+        <ion-list-header color="light">
+            Desea incluir merma y/o borra?
+        </ion-list-header>
+
+        <div padding>
+            <button (click)="activarInput(true)" ion-button small>SI</button>
+            <button (click)="guardar()" ion-button small>NO</button>
+        </div>
+
+
+        <ion-list *ngIf="estadoInput">
+            <form (ngSubmit)="guardar(forma)" #forma="ngForm" novalidate="">
+                <ion-item>
+                    <ion-label floating>Litros Merma:</ion-label>
+                    <ion-input type="number" name="merma" [(ngModel)]="datos.merma">
+                    </ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label floating>Litros Borra:</ion-label>
+                    <ion-input type="number" name="borra" [(ngModel)]="datos.borra"></ion-input>
+                </ion-item>
+
+                <div padding>
+                    <button type="button" (click)="cerrarModal()" ion-button small>CANCELAR</button>
+                    <button type="submit" ion-button small>CONFIRMAR</button>
+                </div>
+            </form>
+        </ion-list>
+
+        <!-- 
+        <ion-item >
+            {{item.title}}
+            <ion-note item-end>
+                {{item.note}}
+            </ion-note>
+        </ion-item>
+    -->
+
+    </ion-list>
+</ion-content>

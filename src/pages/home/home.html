@@ -1,17 +1,44 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
+
+  <ion-navbar color="redline">
+    <button ion-button
+            icon-only
+            menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <img class="logo" src="assets/images/logo-blanco.png"/>
   </ion-navbar>
+
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<ion-content class = "home">
+  <img class="empresa" src="assets/images/empresas/sin-nombre.jpg"/>
+  <ion-card>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-4>
+          <button class= "boton-izq" icon-start
+                  (click) = "irGrupos()">
+            <i class="fa fa-object-group" aria-hidden="true"></i>
+          </button>
+          <p>ADMINISTRAR GRUPOS</p>
+        </ion-col>
+        <ion-col col-4>
+          <button (click) = "irBarrica()"
+                  class= "boton-izq" icon-start>
+            <i class="fa fa-qrcode" aria-hidden="true"></i>
+          </button>
+          <p>LEER QR</p>
+        </ion-col>
+        <ion-col col-4>
+          <button (click) = "irOrdenes()"
+                  class= "boton-izq" icon-start>
+            <i class="fa fa-cubes" aria-hidden="true"></i>
+          </button>
+          <p>ORDENES DE TRABAJO</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+
 </ion-content>

@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar color=redline>
+    <ion-buttons start>
+      <button (click)="volver()" ion-button icon-only>
+          <ion-icon ios="ios-undo" md="md-undo"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>LECTOR BARRICA</ion-title>
+    <img class="img-navbar" src="assets/images/enologia.png">
+    <ion-buttons end>
+      <button ion-button icon-only menuToggle>
+          <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <button (click)="ver_monitor()"
+              ion-button
+              class = "boton_arriba">
+              <i class="fa fa-sign-in" aria-hidden="true"></i>
+              Ver Monitor
+  </button>
+  <ion-card>
+    <ion-grid class="detalle">
+      <ion-row>
+        <ion-col col-12>
+          <p>Código:</p>
+          {{ barrica.codigoBarrica }}
+          <p>Descripción:</p>
+          {{ barrica.descripcion }}
+          <hr>
+          <p>Origen:</p>
+          {{ barrica.origen }}
+          <hr>
+          <p>Año de Adquisición:</p>
+          {{ barrica.anioAdquisicion }}
+          <hr>
+          <p>Bosque:</p>
+          {{ barrica.bosque }}
+          <p>Tostado:</p>
+          {{ barrica.tostado }}
+          <p>Toneleria:</p>
+          {{ barrica.toneleria }}
+          <p>Tipo Enología</p>
+          {{ barrica.tipoEnologia }}
+          <hr>
+          <p>SKU:</p>
+          {{ barrica.sku }}
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+
+  <button (click)="escanearBarrica()"
+              ion-button
+              block>
+              <i class="fa fa-qrcode" aria-hidden="true"></i>
+              Escanear Barrica
+  </button>
+
+</ion-content>

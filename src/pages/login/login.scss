@@ -1,0 +1,122 @@
+page-login {
+  .logo {
+    max-width: 35%;
+    display: block;
+    margin: auto;
+  }
+
+  .empresa {
+    height: 50%;
+  }
+
+  .home {
+    background-color: peachpuff !important; /* This sets the background color*/
+   }
+
+  /*Set the background to transparent for ion-item*/
+  .home ion-card {
+    background-color: transparent;
+    color:black;    /*Text color for each item*/
+    border-bottom: 0px;
+  }
+
+  .home ion-card img {
+      width: 80%;
+  }
+
+  .home .item-block {
+    padding: 10px;
+  }
+
+  .login-content {
+    background-image: url("../assets/images/fondo-enologia.jpg") !important;
+    opacity: 0.9;
+
+    .logo-row {
+      padding-top: 70px;
+      padding-bottom: 20px;
+    }
+
+    .login-box {
+      background: transparent !important;
+      padding: 20px 20px 0px 20px;
+      margin-top: 30px;
+    }
+
+    .login-box .fa {
+      text-align: center;
+      display: block;
+      font-size: 10rem;
+      color: #D9534F
+    }
+
+    ion-row {
+       align-items: center;
+       text-align: center;
+     }
+
+     ion-row ion-item{
+       padding-left: 30px !important;
+       font-size: 1.3em;
+       margin-bottom: 10px;
+       box-shadow: none !important;
+       background: transparent;
+       border-bottom: 0px !important;
+       color: white;
+
+     }
+
+     .checkbox-md .checkbox-checked {
+       background-color: #D9534F;
+       border-color: #D9534F;
+     }
+
+     .item.item-md .checkbox-md {
+       margin: 9px 20px 9px 115px;
+     }
+
+     ion-row .item-md.item-block .item-inner{
+       border-bottom: 0px !important;
+     }
+
+     ion-list ion-item {
+         border-radius: 30px !important;
+         padding-left: 30px !important;
+         font-size: 0.9em;
+         margin-bottom: 10px;
+         border: 1px solid #ffffff;
+         border-bottom: 0px !important;
+         box-shadow: none !important;
+         background: white;
+         color: black;
+     }
+
+     .signup-col {
+       margin: 0px 16px 0px 16px;
+       padding-bottom: 20px;
+     }
+
+     .item-inner {
+       border-bottom-color: #ffffff !important;
+       box-shadow: none !important;
+     }
+
+     .submit-btn {
+       background: #D9534F;
+       border-radius: 30px !important;
+       border: 1px solid #ffffff;
+     }
+
+     .register-btn {
+       color: #ffffff;
+       font-size: 0.8em;
+     }
+
+     img {
+       max-width: 38%;
+       display: block;
+       margin: auto;
+     }
+
+  }
+}

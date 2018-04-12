@@ -1,0 +1,66 @@
+page-slides{
+
+  ion-slides {
+    background-image: url("../assets/images/fondo-enologia.jpg");
+    opacity: 0.9;
+  }
+
+  .swiper-slide img {
+    max-width: 75%;
+  }
+
+  .img-soft {
+    max-width: 40% !important;
+    display: block;
+  }
+
+  .toolbar-background {
+    background: #fff;
+    border-color: transparent;
+  }
+
+  .botton-color {
+    color: tomato;
+  }
+
+  .slide-zoom {
+    height: 100%;
+  }
+
+  .slide-title {
+    color: white;
+    margin-top: -4.2rem;
+  }
+
+  .slide-title2 {
+    color: white;
+    margin-top: 18.8rem;
+  }
+
+  .slide-image {
+    max-height: 50%;
+    max-width: 60%;
+    margin: 123px 0;
+  }
+
+  b {
+    font-weight: 500;
+  }
+
+  p {
+    padding: 0 40px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .page-color {
+    color: snow;
+  }
+
+
+  b {
+    color: tomato;
+  }
+
+
+}

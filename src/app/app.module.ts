@@ -1,40 +1,82 @@
-import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
-import { MyApp } from './app.component';
-
-import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
-import { HomePage } from '../pages/home/home';
-import { TabsPage } from '../pages/tabs/tabs';
-
-import { StatusBar } from '@ionic-native/status-bar';
+import { ErrorHandler, NgModule } from '@angular/core';
+import { IonicApp, IonicErrorHandler, IonicModule, ModalController } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { StatusBar } from '@ionic-native/status-bar';
+
+//Http
+import { HttpModule } from '@angular/http';
+
+// Services
+import { BarricaProvider, UsuariosService, AjustesService, GrupoBarricasProvider,
+         OrdenesTrabajoProvider, SincronizacionService } from '../providers';
+
+// Plugins
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { Network } from '@ionic-native/network';
+import { IonicStorageModule } from '@ionic/storage';
+
+// Pages
+import { MyApp } from './app.component';
+import { HomePage, LoginPage, TabsPage, MasPage, PreferenciasPage, GruposPage, BarricasPage,
+         DetalleGrupoPage, NuevoGrupoPage, OperacionesPage, OrdenTrabajoPage,
+         SlidesPage, MonitorBarricaPage, GrupoOperacionPage } from '../pages';
+        
 
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
-    ContactPage,
     HomePage,
-    TabsPage
+    LoginPage,
+    TabsPage,
+    MasPage,
+    PreferenciasPage,
+    GruposPage,
+    BarricasPage,
+    DetalleGrupoPage,
+    NuevoGrupoPage,
+    OperacionesPage,
+    OrdenTrabajoPage,
+    SlidesPage,
+    MonitorBarricaPage,
+    GrupoOperacionPage,
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    HttpModule,
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot(),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
-    ContactPage,
     HomePage,
-    TabsPage
+    LoginPage,
+    TabsPage,
+    MasPage,
+    PreferenciasPage,
+    GruposPage,
+    BarricasPage,
+    DetalleGrupoPage,
+    NuevoGrupoPage,
+    OperacionesPage,
+    OrdenTrabajoPage,
+    SlidesPage,
+    MonitorBarricaPage,
+    GrupoOperacionPage,
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    BarcodeScanner,
+    Network,
+    BarricaProvider,
+    UsuariosService,
+    GrupoBarricasProvider,
+    OrdenesTrabajoProvider,
+    AjustesService,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    SincronizacionService,
   ]
 })
 export class AppModule {}

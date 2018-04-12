@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar color=redline>
+    <ion-buttons start>
+      <button (click)="volver()" ion-button icon-only>
+          <ion-icon ios="ios-undo" md="md-undo"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>GRUPOS BARRICAS</ion-title>
+    <img class="img-navbar" src="assets/images/enologia.png">
+    <ion-buttons end>
+      <button ion-button icon-only menuToggle>
+          <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-searchbar (ionInput)="getGrupos($event)"></ion-searchbar>
+  <ion-list>
+    <ion-item *ngFor="let grupo of gruposBarricas"
+              (click)="verGrupo( grupo )">
+      {{ grupo.descripcionGrupoBarrica }}
+    </ion-item>
+  </ion-list>
+
+  <ion-fab bottom right>
+    <button (click)="nuevo_grupo()"
+            ion-fab color=redline><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+
+</ion-content>

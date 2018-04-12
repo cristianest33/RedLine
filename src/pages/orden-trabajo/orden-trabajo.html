@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar color=redline>
+    <ion-buttons start>
+      <button (click)="volver()" ion-button icon-only>
+          <ion-icon ios="ios-undo" md="md-undo"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>ORDENES DE TRABAJO</ion-title>
+    <img class="img-navbar" src="assets/images/enologia.png">
+    <ion-buttons end>
+      <button ion-button icon-only menuToggle>
+          <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<ion-card *ngFor="let orden of _ordenesTrabajoProvider.ordenes">
+  <ion-grid class="detalle">
+
+    <h2>Orden de Trabajo N°: {{ orden.numeroOrdenTrabajo }} </h2>
+    <ion-row>
+      <ion-col col-4>
+        <p>Fecha:</p>
+        {{ orden.fechaOrdenTrabajo }}
+      </ion-col>
+      <ion-col col-6>
+        <p>Depósito:</p>
+        {{ orden.codigoDeposito }} - {{ orden.descripcionDeposito }}
+      </ion-col>
+      <ion-col col-2 >
+        <button (click)="verOrden( orden )"
+                ion-button
+                clear
+                item-end
+                color="redline">
+                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12>
+        <p>Sector:</p>
+        {{ orden.codigoSector }} - {{ orden.descripcionSector }}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <hr>
+</ion-card>
+
+</ion-content>
